@@ -8,11 +8,6 @@ import { OrderModal } from './components/OrderModal';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import menuData from './data/menu.json';
 
-/*interface Product {
-  name: string;
-  price: number;
-}*/
-
 interface OrderItem {
   product: string;
   quantity: number;
