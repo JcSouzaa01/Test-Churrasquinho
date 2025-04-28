@@ -1,72 +1,26 @@
 {
   "products": [
     {
-      "name": "Dose Alcatrão",
-      "price": 6.00
-    },
-    {
-      "name": "Dose Misturada C/Cheio",
-      "price": 6.00
-    },
-    {
-      "name": "Dose Mistura C/Meio",
-      "price": 3.00
-    },
-    {
-      "name": "Pitu C/Cheio",
-      "price": 4.00
-    },
-    {
-      "name": "Pitu C/Meio",
-      "price": 2.00
-    },
-    {
-      "name": "Churrasco Boi",
-      "price": 8.00
-    },
-    {
-      "name": "Churrasco Frango",
-      "price": 7.00
-    },
-    {
-      "name": "Churrasco Calabresa",
-      "price": 7.00
-    },
-    {
-      "name": "Churrasco Porco",
-      "price": 7.00
-    },
-    {
-      "name": "Churrasco Coração",
-      "price": 7.00
-    },
-    {
-      "name": "Churrasco Medalhão",
-      "price": 12.00
-    },
-    {
-      "name": "Pão de Alho",
-      "price": 6.00
-    },
-    {
       "name": "Batata Frita Copo",
       "price": 3.00
-    },
-    {
-      "name": "Batata Frita Porção P",
-      "price": 8.00
     },
     {
       "name": "Batata Frita Porção G",
       "price": 13.00
     },
     {
-      "name": "Caldinhos Feijão",
-      "price": 6.00
-    },{
+      "name": "Batata Frita Porção P",
+      "price": 8.00
+    },
+    {
       "name": "Caldinhos Camarão",
       "price": 6.00
-    },{
+    },
+    {
+      "name": "Caldinhos Feijão",
+      "price": 6.00
+    },
+    {
       "name": "Caldinhos Quenga",
       "price": 6.00
     },
@@ -77,6 +31,54 @@
     {
       "name": "Cerveja Itaipava",
       "price": 5.00
+    },
+    {
+      "name": "Churrasco Boi",
+      "price": 8.00
+    },
+    {
+      "name": "Churrasco Calabresa",
+      "price": 7.00
+    },
+    {
+      "name": "Churrasco Coração",
+      "price": 7.00
+    },
+    {
+      "name": "Churrasco Frango",
+      "price": 7.00
+    },
+    {
+      "name": "Churrasco Medalhão",
+      "price": 12.00
+    },
+    {
+      "name": "Churrasco Porco",
+      "price": 7.00
+    },
+    {
+      "name": "Dose Alcatrão",
+      "price": 6.00
+    },
+    {
+      "name": "Dose Misturada C/Cheio",
+      "price": 6.00
+    },
+    {
+      "name": "Dose Misturada C/Meio",
+      "price": 3.00
+    },
+    {
+      "name": "Pão de Alho",
+      "price": 6.00
+    },
+    {
+      "name": "Pitu C/Cheio",
+      "price": 4.00
+    },
+    {
+      "name": "Pitu C/Meio",
+      "price": 2.00
     }
   ]
 }
