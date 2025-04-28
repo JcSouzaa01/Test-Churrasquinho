@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "name": "Churrasco Boi",
+      "price": 8.00
+    },
+    {
+      "name": "Churrasco Frango",
+      "price": 7.00
+    },
+    {
+      "name": "Churrasco Porco",
+      "price": 7.00
+    },
+    {
+      "name": "Churrasco Coração",
+      "price": 7.00
+    },
+    {
+      "name": "Churrasco Medalhão",
+      "price": 12.00
+    },
+    {
+      "name": "Pão de Alho",
+      "price": 6.00
+    },
+    {
+      "name": "Batata Frita Copo",
+      "price": 3.00
+    },
+    {
+      "name": "Batata Frita Porção P",
+      "price": 8.00
+    },
+    {
+      "name": "Batata Frita Porção G",
+      "price": 13.00
+    },
+    {
+      "name": "Caldinhos Feijão",
+      "price": 6.00
+    },{
+      "name": "Caldinhos Camarão",
+      "price": 6.00
+    },{
+      "name": "Caldinhos Quenga",
+      "price": 6.00
+    },
+    {
+      "name": "Cerveja Amstel",
+      "price": 6.00
+    },
+    {
+      "name": "Cerveja Itaipava",
+      "price": 5.00
+    }
+  ]
+}
