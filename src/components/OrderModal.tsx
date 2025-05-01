@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/outline';
 
 interface Product {
   name: string;
@@ -77,30 +77,39 @@ export function OrderModal({ isOpen, onClose, onSave, products, editingOrder }: 
 
   const handleClose = () => {
     if (editingOrder) {
-      // If editing, revert to original order data
       setCustomer(editingOrder.customer);
       setItems(originalItems.map(item => ({...item})));
       setStatus(editingOrder.status);
     } else {
-      // If creating new order, reset everything
       resetForm();
     }
     onClose();
   };
 
   const handleAddItem = (product: Product) => {
-    const existingItem = items.find(item => item.product === product.name);
+    const newItems = [...items];
+    const existingItemIndex = newItems.findIndex(item => item.product === product.name);
     
-    if (existingItem) {
-      setItems(items.map(item => 
-        item.product === product.name
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
+    if (existingItemIndex !== -1) {
+      newItems[existingItemIndex].quantity += 1;
     } else {
-      setItems([...items, { product: product.name, quantity: 1, price: product.price }]);
+      newItems.unshift({ product: product.name, quantity: 1, price: product.price });
     }
+    
+    setItems(newItems);
     setProductSearch('');
+  };
+
+  const handleQuantityChange = (index: number, change: number) => {
+    const newItems = [...items];
+    const newQuantity = newItems[index].quantity + change;
+    
+    if (newQuantity > 0) {
+      newItems[index].quantity = newQuantity;
+      setItems(newItems);
+    } else {
+      setItems(newItems.filter((_, i) => i !== index));
+    }
   };
 
   const handleAddNewProduct = () => {
@@ -231,26 +240,24 @@ export function OrderModal({ isOpen, onClose, onSave, products, editingOrder }: 
             {items.map((item, index) => (
               <div key={index} className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg">
                 <span className="flex-1">{item.product}</span>
-                <input
-                  type="number"
-                  min="1"
-                  className="w-20 px-2 py-1 border rounded"
-                  value={item.quantity}
-                  onChange={(e) => {
-                    const newItems = [...items];
-                    newItems[index].quantity = Number(e.target.value);
-                    setItems(newItems);
-                  }}
-                />
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleQuantityChange(index, -1)}
+                    className="p-1 rounded-full hover:bg-gray-200"
+                  >
+                    <MinusIcon className="w-4 h-4" />
+                  </button>
+                  <span className="w-8 text-center">{item.quantity}</span>
+                  <button
+                    onClick={() => handleQuantityChange(index, 1)}
+                    className="p-1 rounded-full hover:bg-gray-200"
+                  >
+                    <PlusIcon className="w-4 h-4" />
+                  </button>
+                </div>
                 <span className="w-24 text-right">
                   R$ {(item.quantity * item.price).toFixed(2)}
                 </span>
-                <button
-                  onClick={() => setItems(items.filter((_, i) => i !== index))}
-                  className="text-red-500 px-2"
-                >
-                  ×
-                </button>
               </div>
             ))}
             {items.length > 0 && (
